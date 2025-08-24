@@ -1,0 +1,21 @@
+import SEO from "@/components/seo";
+import BreadCrumb from "../breadcrumb/breadcrumb";
+import Footer from "../footer/footer";
+import ScrollToTopButton from "../scroll-to-top/scrollToTop";
+import Contactcontainer from "./contact-container";
+import HeaderFour from "../header/headerFour";
+
+const Contact = () => {
+  return (
+    <>
+      <SEO pageTitle="Contact Us" />
+        <HeaderFour />
+        <BreadCrumb title="Contact Us" innerTitle="Contact Us" bgImage="/img/banner/Entrance12.png"/>
+        <Contactcontainer />
+        <Footer />
+        <ScrollToTopButton />
+    </>
+  );
+};
+
+export default Contact;
