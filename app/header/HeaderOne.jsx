@@ -30,7 +30,7 @@ export default function HeaderOne({ variant }) {
             <div className="header__area-menubar-left">
               <div className="header__area-menubar-left-logo">
                 <Link href="/">
-                  <img src="https://www.hotelsilvermoon.com/img/logo_inline.png" alt="logo" height={"50px"}/>
+                  <img src="/logo-1.jpg" alt="logo" height={"50px"}/>
                 </Link>
                 <span
                   className={

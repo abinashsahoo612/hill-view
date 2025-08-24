@@ -27,7 +27,7 @@ const Team = () => {
           <div className="col-xl-12">
             <div className="team__area-title">
               <span className="subtitle__one">Our Gallery</span>
-              <h2>Our Super Deluxe Rooms</h2>
+              <h2>Our Rooms</h2>
             </div>
           </div>
         </div>

@@ -4,12 +4,13 @@ import Footer from "../footer/footer";
 import ScrollToTopButton from "../scroll-to-top/scrollToTop";
 import Contactcontainer from "./contact-container";
 import HeaderFour from "../header/headerFour";
+import HeaderOne from "../header/HeaderOne";
 
 const Contact = () => {
   return (
     <>
       <SEO pageTitle="Contact Us" />
-        <HeaderFour />
+        <HeaderOne />
         <BreadCrumb title="Contact Us" innerTitle="Contact Us" bgImage="/img/banner/Entrance12.png"/>
         <Contactcontainer />
         <Footer />
