@@ -7,7 +7,7 @@ const Deluxe = () => {
   return (
     <div className="deluxe__three section-padding">
       <div className="container">
-        <div className="row align-items-center mb-30">
+        <div className="row align-items-center mb-70">
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="deluxe__three-title">
               <span className="subtitle__one">

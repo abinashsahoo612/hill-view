@@ -1,6 +1,6 @@
 "use client"
 import SEO from "@/components/seo";
-import Footer from "@/app/footer/footerTwo";
+import Footer from "@/app/footer/footer";
 import ScrollToTopButton from "@/app/scroll-to-top/scrollToTop";
 import Accommodations from "@/app/home-three/accommodations";
 import Banner from "@/app/home-three/banner";
@@ -10,13 +10,13 @@ import Placearea from "@/app/home-three/place-area";
 import Roomarea from "@/app/home-three/room-area";
 import Services from "@/app/home-three/services";
 import MadMan from "./home-three/madMan";
-import HeaderFour from "./header/headerFour";
+import HeaderOne from "./header/HeaderOne";
 
 const Home3 = () => {
   return (
     <>
       <SEO pageTitle='Home Three' />
-        <HeaderFour />
+        <HeaderOne />
         <Banner />
         <Deluxe />
         <MadMan/>
