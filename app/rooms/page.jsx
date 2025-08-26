@@ -25,67 +25,95 @@ const Roomstyle = () => {
           <div className="row">
             <div className="col-xl-12 order-first order-lg-1 lg-mb-30">
               <div className="row justify-content-space-between">
-                {Object.entries(roomStyleAllBlogs).map(([key, item]) => (
-                  <div key={key} className="col-xl-3 col-md-3 mb-30">
-                    <Link href={`/room-details/${item.title.replace(/\s+/g, '-').toLowerCase()}`}>
-                      <div className="deluxe__two-item">
-                        <div className="deluxe__two-item-image">
+              {Object.entries(roomStyleAllBlogs).map(([key, item]) => (
+                <div key={key} className="col-xl-3 col-md-3 mb-30">
+                  <Link href={`/room-details/${item.title.replace(/\s+/g, '-').toLowerCase()}`}>
+                    <div className="flip-card">
+                      <div className="flip-card-inner">
+                        
+                        {/* Front side (Image) */}
+                        <div className="flip-card-front">
+                          <div className="front-image">
                           <Image
                             src={item.img.src}
                             alt={item.title}
                             width={500}
-                            height={500}
+                            height={400}
                           />
-                        </div>
-                        <div className="deluxe__two-item-content">
-                          {item.price && <span>Rs {item.price}/Night</span>}
-                          <h4 style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                            {item.title}
-                          </h4>
-                          <p>{item.des}</p>
-                          <div className="deluxe__two-item-content-meta">
-                            <ul>
-                              {item.bed && (
-                                <li>
-                                  <i className="fal fa-bed-alt"></i> ({item.bed})
-                                  bed's
-                                </li>
-                              )}
-                              {item.guest && (
-                                <li>
-                                  <i className="fal fa-users"></i> ({item.guest})
-                                  Max Guest's
-                                </li>
-                              )}
-                              {item.area && (
-                                <li>
-                                  <i className="fal fa-warehouse-alt"></i> (
-                                  {item.area}) Area
-                                </li>
-                              )}
-                              {item.maxCapacity && (
-                                <li>
-                                  <i className="fal fa-users"></i> (
-                                  {item.maxCapacity}) Max Capacity
-                                </li>
-                              )}
-                            </ul>
                           </div>
-                          {/* <div className="deluxe__two-item-content-bottom">
-                            <Link className="simple-btn" href="/room-details">
-                              <i className="far fa-chevron-right"></i> Read More
-                            </Link>
-                            <p>
-                              <i className="fas fa-star"></i>
-                              <span>{item.star}</span>2k
-                            </p>
-                          </div> */}
+                          <div className="front-info">
+                            <div className="deluxe__two-item-content content">
+                              {item.price && <span>Rs {item.price}/Night</span>}
+                              <h4>{item.title}</h4>
+                              <p>{item.des}</p>
+                              <div className="deluxe__two-item-content-meta content">
+                                <ul>
+                                  {item.bed && (
+                                    <li>
+                                      <i className="fal fa-bed-alt"></i> ({item.bed}) bed's
+                                    </li>
+                                  )}
+                                  {item.guest && (
+                                    <li>
+                                      <i className="fal fa-users"></i> ({item.guest}) Max Guest's
+                                    </li>
+                                  )}
+                                  {item.area && (
+                                    <li>
+                                      <i className="fal fa-warehouse-alt"></i> ({item.area}) Area
+                                    </li>
+                                  )}
+                                  {item.maxCapacity && (
+                                    <li>
+                                      <i className="fal fa-users"></i> ({item.maxCapacity}) Max Capacity
+                                    </li>
+                                  )}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
+
+                        {/* Back side (Info on hover) */}
+                        <div className="flip-card-back">
+                          <div className="deluxe__two-item-content content">
+                            {item.price && <span>Rs {item.price}/Night</span>}
+                            <h4>{item.title}</h4>
+                            <p>{item.des}</p>
+                            <div className="deluxe__two-item-content-meta content">
+                              <ul>
+                                {item.bed && (
+                                  <li>
+                                    <i className="fal fa-bed-alt"></i> ({item.bed}) bed's
+                                  </li>
+                                )}
+                                {item.guest && (
+                                  <li>
+                                    <i className="fal fa-users"></i> ({item.guest}) Max Guest's
+                                  </li>
+                                )}
+                                {item.area && (
+                                  <li>
+                                    <i className="fal fa-warehouse-alt"></i> ({item.area}) Area
+                                  </li>
+                                )}
+                                {item.maxCapacity && (
+                                  <li>
+                                    <i className="fal fa-users"></i> ({item.maxCapacity}) Max Capacity
+                                  </li>
+                                )}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
                       </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
             </div>
           </div>
         </div>
