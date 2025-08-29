@@ -4,25 +4,13 @@ const MadMan = () => {
       <div className="container">
         <div className="row justify-content-space-between" style={{justifyContent: "space-between"}}>
           <div className="col-xl-5 col-lg-5 col-md-5 xl-mb-30">
-            <img src="/img/madman.jpeg" />
+            <img src="/img/restaurant.jpg" />
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6 lg-mb-30">
-            <span className="subtitle__one">Party like madman</span>
-            <h2>8 Mad Men</h2>
+            <span className="subtitle__one">Dine Like Royalty</span>
+            <h2>Hill View Restaurant</h2>
             <p className="mb-2">
-              Have a Party Like a Mad Man at 8 Mad Man — the boldest, most
-              vibrant corner of our luxury resort, where the night pulses with
-              music, laughter, and unforgettable moments. As the evening sky
-              fades into starlight, step into a space where the drinks keep
-              flowing, the energy stays high, and good vibes are guaranteed.
-              Enjoy handcrafted cocktails, ice-cold beers, and exotic blends
-              that fuel your fun and spark your spirit. From themed nights and
-              crazy games to spontaneous cheers and bar-side banter, every
-              moment at 8 Mad Man is a story waiting to happen. It's the perfect
-              place to unwind after a sun-soaked day — chill with friends, make
-              a few new ones, and let the night take its own course. No rules,
-              no routines, just raw, resort-style fun. At 8 Mad Man, we don’t
-              just throw parties — we set the night on fire.
+              Savor a feast fit for royalty at Hill View Restaurant the heart of our luxury resort, where flavors, aromas, and experiences come together in perfect harmony. As the morning sun lights up the hills or the evening sky glows in twilight, step into a space where every meal is a celebration. Relish chef crafted delicacies, sizzling grills, and authentic regional dishes paired with fine wines and refreshing beverages. From lavish buffets and live counters to intimate dinners under the stars, every bite tells a story of passion and perfection. It’s the ideal spot to gather with family, share laughs with friends, or enjoy a romantic escape for two. No rush, no compromise, just pure culinary indulgence. At Hill View Restaurant, we don’t just serve food we craft unforgettable dining moments.
             </p>
           </div>
         </div>

@@ -26,7 +26,7 @@ const Roomstyle = () => {
             <div className="col-xl-12 order-first order-lg-1 lg-mb-30">
               <div className="row justify-content-space-between">
               {Object.entries(roomStyleAllBlogs).map(([key, item]) => (
-                <div key={key} className="col-xl-3 col-md-3 mb-30">
+                <div key={key} className="col-xl-4 col-md-4 mb-30">
                   {/* <Link href={`/room-details/${item.title.replace(/\s+/g, '-').toLowerCase()}`}> */}
                   <Link href="#">
                     <div className="flip-card">
