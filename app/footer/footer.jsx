@@ -90,20 +90,47 @@ export default function Footer() {
           </div>
           <div className="col-xl-3 col-lg-3 col-md-7 col-sm-6">
             <div className="footer__two-widget">
-              <h5 style={{color: '#CCCCCC'}}>Opening Hours</h5>
+              <h5 style={{color: '#CCCCCC'}}>Tourist Spots</h5>
               <div className="footer__two-widget-hours">
                 <p style={{color: '#CCCCCC'}}>
-                  Sun<span>7 : 00 AM - 2 : 00 PM</span>
+                  Raja seat<span>1.5 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
-                  Mon<span>9 : 00 AM - 4 : 00 PM</span>
+                  Abby falls<span>8 k.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
-                  Tue<span>6 : 00 AM - 1 : 00 PM</span>
+                  Rajas Tomb<span>1.0 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
-                  Wed<span>8 : 00 AM - 3 : 00 PM</span>
+                  Fort<span>1.0 K.M</span>
                 </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Mandalpatti<span>18 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Gen. ThimmaiaH Museum<span>1.5 K.M</span>
+                </p>
+                {/* <p style={{color: '#CCCCCC'}}>
+                  Dubare Elephant Camp<span>36 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Nisargadhama<span>28 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Harangi Dam<span>33 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Iruppu Falls<span>74 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Nagarhole National Park<span>79 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Bhagamandala<span>79 K.M</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Talacauvery<span>39 K.M</span>
+                </p> */}
               </div>
             </div>
           </div>

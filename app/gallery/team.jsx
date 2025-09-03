@@ -4,21 +4,22 @@ import Social from "../socials/page";
 
 const Team = () => {
   const teamItem = [
-    'img/gallery/Croppedr-Building.webp',
-    'img/gallery/AMT_9279 (1).webp',
-    'img/gallery/AMT_59671F.webp',
-    'img/gallery/AMT_5913.webp',
-    'img/gallery/AMT_5946.webp',
-    'img/gallery/AMT_9181.webp',
-    'img/gallery/AMT_5898.webp',
-    'img/gallery/AMT_5906.webp',
-    'img/gallery/0L0A5649.webp',
-    'img/gallery/DJI_0671.webp',
-    'img/gallery/AMT_6041.webp',
-    'img/gallery/AMT_60321 (1).webp',
-    'img/gallery/AMT_9246 (2).webp',
-    'img/gallery/AMT_9276-Recovered (1).webp',
-    'img/gallery/DJI_0686 (1).webp',
+    'img/banner/img1.jpeg',
+    'img/banner/img2.jpeg',
+    'img/banner/img3.jpeg',
+    'img/banner/img4.jpg',
+    'img/banner/img5.jpg',
+    'img/rooms/double-standard/banner.jpeg',
+    'img/rooms/double-standard/img1.jpeg',
+    'img/rooms/double-standard/img2.jpeg',
+    'img/rooms/double-standard/img3.jpeg',
+    'img/rooms/triple-standard/banner.jpeg',
+    'img/rooms/triple-standard/img1.jpeg',
+    'img/rooms/triple-standard/img2.jpeg',
+    'img/rooms/triple-standard/img3.jpeg',
+    'img/rooms/quadruple-standard/banner.jpeg',
+    'img/rooms/quadruple-standard/img1.jpeg',
+    // 'img/rooms/quadruple-standard/img2.jpeg',
   ]
   return (
     <div className="team__area section-padding">
@@ -27,7 +28,7 @@ const Team = () => {
           <div className="col-xl-12">
             <div className="team__area-title">
               <span className="subtitle__one">Our Gallery</span>
-              <h2>Our Rooms</h2>
+              {/* <h2>Our Rooms</h2> */}
             </div>
           </div>
         </div>
@@ -36,7 +37,7 @@ const Team = () => {
               <div className="col-xl-4 col-lg-4 col-md-6" key={data}>
                 <div className="team__area-item">
                     <div className="team__area-item-image mt-30">
-                      <img alt="" src={data} width={400} height={300} />
+                      <img alt="" src={data} style={{height:'250px', width:'100%',objectFit:'cover'}} />
                     </div>
                 </div>
               </div>

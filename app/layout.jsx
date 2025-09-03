@@ -5,6 +5,7 @@ import "./styles/styles.css";
 import "./assets/css/all.css";
 import "./assets/css/meanmenu.min.css";
 import "./assets/sass/style.css";
+import { AuthProvider } from "./Providers";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <NextTopLoader showSpinner={false} />
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

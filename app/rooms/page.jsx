@@ -13,11 +13,11 @@ import SEO from "@/components/seo";
 const Roomstyle = () => {
   return (
     <>
-      <SEO pageTitle="Room & Banquet" />
+      <SEO pageTitle="Rooms" />
       <HeaderOne />
       <BreadCrumb
-        title="Room & Banquet"
-        innerTitle="Room & Banquet"
+        title="Rooms"
+        innerTitle="Rooms"
         bgImage="/img/banner/img2.jpeg"
       />
       <div className="room__area section-padding">

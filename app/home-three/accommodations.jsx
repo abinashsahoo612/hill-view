@@ -34,7 +34,7 @@ const Accommodations = () => {
           </div>
           <div className="col-xl-4 col-lg-4 col-md-7 md-mb-30">
             <div className="accommodations__two-right">
-              <img src="/img/banner/img1.jpeg" alt="" />
+              <img src="/img/banner/img3.jpeg" alt="" />
               {/* <div className="accommodations__two-right-bottom"> */}
               {/* <div className="accommodations__two-right-bottom-signature">
                   <img src="/img/bg/signature.png" alt="" />

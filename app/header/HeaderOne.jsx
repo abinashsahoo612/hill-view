@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 import { BarKitchen, Blog, Home, Page, Room } from "./Menu";
 import DropDown from "./DropDown";
 import Link from "next/link";
 
 export default function HeaderOne({ variant }) {
+  const { data: session } = useSession();
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   useEffect(() => {
@@ -58,7 +60,7 @@ export default function HeaderOne({ variant }) {
                   // className="menu-item-has-children"
                   >
                     <a href="/rooms">
-                    Rooms & Banquet
+                    Rooms
                     </a>
                     {/* <DropDown />
                     <ul className="sub-menu">
@@ -66,7 +68,7 @@ export default function HeaderOne({ variant }) {
                     </ul> */}
                   </li>
                   <li>
-                    <a href="/bar-restaurant">Bar & Restaurant</a>
+                    <a href="/restaurant">Restaurant</a>
                   </li>
                   <li>
                     <a href="/gallery">Gallery</a>
@@ -77,6 +79,47 @@ export default function HeaderOne({ variant }) {
                   <li>
                     <Link href="/about">About Us</Link>
                   </li>
+                  {/* login section */}
+                  {/* {!session ? (
+                    <li>
+                      <Link href="/login">Login</Link>
+                    </li>
+                  ) : session.user.role === "admin" ? (
+                    <li className="menu-item-has-children">
+                      <a href="#">Admin</a>
+                      <DropDown>
+                        <ul className="sub-menu">
+                          <li>
+                            <Link href="/admin">Rooms</Link>
+                          </li>
+                          <li>
+                            <a
+                              onClick={() => signOut({ callbackUrl: "/" })}
+                            >
+                              Logout
+                            </a>
+                          </li>
+                        </ul>
+                      </DropDown>
+                    </li>
+                  ) : (
+                    <li className="menu-item-has-children">
+                      <a href="#">Profile</a>
+                      <DropDown>
+                        <ul className="sub-menu">
+                          <li>
+                            <Link href="/bookings">Bookings</Link>
+                            <button
+                              onClick={() => signOut({ callbackUrl: "/" })}
+                              className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                            >
+                              Logout
+                            </button>
+                          </li>
+                        </ul>
+                      </DropDown>
+                    </li>
+                  )} */}
                 </ul>
               </div>
             </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Deluxe = () => {
-  const roomItem =  Object.values(roomStyleAllBlogs).slice(0, 4);
+  const roomItem =  Object.values(roomStyleAllBlogs).slice(0, 3);
   return (
     <div className="deluxe__three section-padding">
       <div className="container">

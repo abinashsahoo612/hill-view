@@ -77,9 +77,9 @@ const ServicesDetails = () => {
                 <img src="/img/bar-kitchen/poolside.jpg" alt="" />
               </div>
               <div className="services__details-left-content">
-                <h2 className="mb-30">Bar & Restaurant</h2>
+                <h2 className="mb-30">Restaurant</h2>
                 <p className="mb-0">
-                  Enjoy an exceptional dining and bar experience designed to satisfy every taste. Our kitchen offers a diverse menu crafted from fresh, locally sourced ingredients, while our bar features a wide selection of premium spirits, fine wines, and handcrafted cocktails.
+                  Enjoy an exceptional dining experience designed to satisfy every taste. Our kitchen offers a diverse menu crafted from fresh, locally sourced ingredients, while our restaurant features a wide selection of premium spirits, fine wines, and handcrafted cocktails.
                 </p>
                 <span>
                   Whether you're in the mood for a casual bite or a refined dinner, our culinary team brings innovation and flavor to every plate. The stylish ambiance and attentive service make it the perfect spot for social gatherings, celebrations, or a relaxed evening.

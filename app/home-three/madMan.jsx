@@ -7,10 +7,11 @@ const MadMan = () => {
             <img src="/img/restaurant.jpg" />
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6 lg-mb-30">
-            <span className="subtitle__one">Dine Like Royalty</span>
-            <h2>Hill View Restaurant</h2>
+            {/* <span className="subtitle__one">Dine Like Royalty</span> */}
+            <span className="subtitle__one">Hill View Restaurant</span>
+            <h2>Coming Soon</h2>
             <p className="mb-2">
-              Savor a feast fit for royalty at Hill View Restaurant the heart of our luxury resort, where flavors, aromas, and experiences come together in perfect harmony. As the morning sun lights up the hills or the evening sky glows in twilight, step into a space where every meal is a celebration. Relish chef crafted delicacies, sizzling grills, and authentic regional dishes paired with fine wines and refreshing beverages. From lavish buffets and live counters to intimate dinners under the stars, every bite tells a story of passion and perfection. It’s the ideal spot to gather with family, share laughs with friends, or enjoy a romantic escape for two. No rush, no compromise, just pure culinary indulgence. At Hill View Restaurant, we don’t just serve food we craft unforgettable dining moments.
+              Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury resort. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony.
             </p>
           </div>
         </div>
