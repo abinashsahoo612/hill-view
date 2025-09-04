@@ -47,7 +47,7 @@ const Roomstyle = () => {
                               {item.price && <span>Rs {item.price}/Night</span>}
                               <h4>{item.title}</h4>
                               <p>{item.des}</p>
-                              <div className="deluxe__two-item-content-meta content">
+                              {/* <div className="deluxe__two-item-content-meta content">
                                 <ul>
                                   {item.bed && (
                                     <li>
@@ -70,7 +70,7 @@ const Roomstyle = () => {
                                     </li>
                                   )}
                                 </ul>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>
