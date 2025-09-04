@@ -8,7 +8,7 @@ const Callarea = () => {
         >
           <div className="col-xl-8">
             <div className="call__area-bg-left">
-              <h2>Need any Contact with Us</h2>
+              <h2>Enjoy 10% off for direct bookings.</h2>
             </div>
           </div>
           <div className="col-xl-4">
@@ -18,7 +18,7 @@ const Callarea = () => {
               </div>
               <div className="call__area-bg-right-content">
                 <span>
-                  <a href="tel:+123(458)585568">+123 (458) 585 568</a>
+                  <a href="tel:+917676276863">+91-7676276863</a>
                 </span>
               </div>
             </div>

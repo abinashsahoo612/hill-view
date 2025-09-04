@@ -79,9 +79,10 @@ const ServicesDetails = () => {
               <div className="services__details-left-content">
                 <h2 className="mb-30">Restaurant</h2>
                 <p className="mb-0">
-                  Enjoy an exceptional dining experience designed to satisfy every taste. Our kitchen offers a diverse menu crafted from fresh, locally sourced ingredients, while our restaurant features a wide selection of premium spirits, fine wines, and handcrafted cocktails.
+                  Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury resort. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony. For now, we’re happily bringing you tasty meals from outside so you can still enjoy great food until our restaurant is ready.
                 </p>
-                <span>
+                {/* uncomment when restaurnat is opened */}
+                {/* <span>
                   Whether you're in the mood for a casual bite or a refined dinner, our culinary team brings innovation and flavor to every plate. The stylish ambiance and attentive service make it the perfect spot for social gatherings, celebrations, or a relaxed evening.
                 </span>
                 <p>
@@ -89,8 +90,9 @@ const ServicesDetails = () => {
                 </p>
                 <p>
                   Enjoy seamless service, comfortable seating, and a relaxed environment designed to enhance your dining experience. Every element, from lighting to layout, is curated to ensure guests feel at ease and fully immersed in the moment. Our goal is not just to serve meals, but to create memorable experiences through ambiance, taste, and hospitality.
-                </p>
-                <div className="row align-items-center mt-35 mb-35">
+                </p> */}
+                {/* uncomment when restaurnat is opened */}
+                {/* <div className="row align-items-center mt-35 mb-35">
                   <div className="col-xl-6 col-lg-12 xl-mb-30">
                     <img
                       className="img__full"
@@ -122,7 +124,7 @@ const ServicesDetails = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
               
             </div>
