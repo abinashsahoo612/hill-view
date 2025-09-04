@@ -17,8 +17,8 @@ const Team = () => {
     'img/rooms/triple-standard/img1.jpeg',
     'img/rooms/triple-standard/img2.jpeg',
     'img/rooms/triple-standard/img3.jpeg',
-    'img/rooms/quadruple-standard/banner.jpeg',
-    'img/rooms/quadruple-standard/img1.jpeg',
+    'img/rooms/quadruple-standard/banner.jpg',
+    'img/rooms/quadruple-standard/img1.jpg',
     // 'img/rooms/quadruple-standard/img2.jpeg',
   ]
   return (
