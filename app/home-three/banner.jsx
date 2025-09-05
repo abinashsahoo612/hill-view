@@ -14,7 +14,7 @@ const bannerData = {
     {
       subtitle: "Welcome to Hill View",
       title: "Refresh, relax, and rejuvenate.",
-      image: "/img/banner/img2.jpeg",
+      image: "/img/banner/img2.jpg",
     },
     // {
     //   subtitle: "Welcome to Hill View",

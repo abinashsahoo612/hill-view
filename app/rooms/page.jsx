@@ -6,11 +6,24 @@ import Footer from "../footer/footer";
 import ScrollToTopButton from "../scroll-to-top/scrollToTop";
 import BreadCrumb from "../breadcrumb/breadcrumb";
 import Link from "next/link";
-import Sidebar from "../room-details/sidebar";
 import HeaderOne from "../header/HeaderOne";
 import SEO from "@/components/seo";
 
+import { useEffect, useState } from "react";
+
 const Roomstyle = () => {
+  const [rooms, setRooms] = useState([]);
+
+  const fetchRooms = async () => {
+    const res = await fetch("/api/rooms");
+    const data = await res.json();
+    setRooms(data);
+  };
+
+  useEffect(() => {
+    fetchRooms();
+  }, []);
+
   return (
     <>
       <SEO pageTitle="Rooms" />
@@ -25,7 +38,7 @@ const Roomstyle = () => {
           <div className="row">
             <div className="col-xl-12 order-first order-lg-1 lg-mb-30">
               <div className="row justify-content-space-between">
-              {Object.entries(roomStyleAllBlogs).map(([key, item]) => (
+              {Object.entries(rooms).map(([key, item]) => (
                 <div key={key} className="col-xl-4 col-md-4 mb-30">
                   {/* <Link href={`/room-details/${item.title.replace(/\s+/g, '-').toLowerCase()}`}> */}
                   <Link href="#">
@@ -35,18 +48,18 @@ const Roomstyle = () => {
                         {/* Front side (Image) */}
                         <div className="flip-card-front">
                           <div className="front-image">
-                          <Image
-                            src={item.img.src}
+                          <img
+                            src={item.bannerImage}
                             alt={item.title}
-                            width={500}
-                            height={400}
+                            className="card-img-top"
+                            style={{ height: "100%", objectFit: "cover" }}
                           />
                           </div>
                           <div className="front-info">
                             <div className="deluxe__two-item-content content">
-                              {item.price && <span>Rs {item.price}/Night</span>}
+                              {item.price && <span>Rs {item.price}+TAX/Night</span>}
                               <h4>{item.title}</h4>
-                              <p>{item.des}</p>
+                              <p>{item.short_desc}</p>
                               {/* <div className="deluxe__two-item-content-meta content">
                                 <ul>
                                   {item.bed && (
@@ -78,9 +91,9 @@ const Roomstyle = () => {
                         {/* Back side (Info on hover) */}
                         <div className="flip-card-back">
                           <div className="deluxe__two-item-content content">
-                            {item.price && <span>Rs {item.price}/Night</span>}
+                            {/* {item.price && <span>Rs {item.price}/Night</span>} */}
                             <h4>{item.title}</h4>
-                            <p>{item.des}</p>
+                            <p>{item.description}</p>
                             <div className="deluxe__two-item-content-meta content">
                               <ul>
                                 {item.bed && (
@@ -90,7 +103,7 @@ const Roomstyle = () => {
                                 )}
                                 {item.guest && (
                                   <li>
-                                    <i className="fal fa-users"></i> ({item.guest}) Max Guest's
+                                    <i className="fal fa-users"></i> ({item.guest}) Guest
                                   </li>
                                 )}
                                 {item.area && (
@@ -98,9 +111,9 @@ const Roomstyle = () => {
                                     <i className="fal fa-warehouse-alt"></i> ({item.area}) Area
                                   </li>
                                 )}
-                                {item.maxCapacity && (
+                                {item.maxguest && (
                                   <li>
-                                    <i className="fal fa-users"></i> ({item.maxCapacity}) Max Capacity
+                                    <i className="fal fa-users"></i> ({item.maxguest}) Max Guests
                                   </li>
                                 )}
                               </ul>

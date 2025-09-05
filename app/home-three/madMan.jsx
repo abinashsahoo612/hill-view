@@ -11,7 +11,7 @@ const MadMan = () => {
             <span className="subtitle__one">Hill View Restaurant</span>
             <h2>Coming Soon</h2>
             <p className="mb-2">
-              Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury resort. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony. In the meantime, we are thoughtfully arranging meals from trusted outside partners to ensure your dining experience remains delightful until our restaurant opens
+              Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury hotel. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony. In the meantime, we are thoughtfully arranging meals from trusted outside partners to ensure your dining experience remains delightful until our restaurant opens
             </p>
           </div>
         </div>
