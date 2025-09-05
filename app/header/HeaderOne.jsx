@@ -80,7 +80,7 @@ export default function HeaderOne({ variant }) {
                     <Link href="/about">About Us</Link>
                   </li>
                   {/* login section */}
-                  {!session ? (
+                  {/* {!session ? (
                     <li>
                       <Link href="/login">Login</Link>
                     </li>
@@ -119,7 +119,7 @@ export default function HeaderOne({ variant }) {
                         </ul>
                       </DropDown>
                     </li>
-                  )}
+                  )} */}
                 </ul>
               </div>
             </div>

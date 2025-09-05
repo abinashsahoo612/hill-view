@@ -3674,9 +3674,10 @@ Banner Two
   transition: transform 1.5s ease, opacity 1.5s ease;
 }
 .banner__two-content h1 {
-  margin-bottom: 45px;
+  margin-bottom: 15px;
   color: var(--white);
   font-weight: 500;
+  font-size:54px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px);
