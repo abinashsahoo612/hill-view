@@ -35,12 +35,12 @@ const Services = () => {
             <div className="services__two-item">
               <span>03</span>
               <div className="services__two-item-icon">
-                <img src="/img/icon/swimming-pool.png" alt="" />
+                <img src="/img/icon/list-7.png" alt="" />
               </div>
               <div className="services__two-item-content">
-                <h4>Swimming pool</h4>
+                <h4>Free Wifi</h4>
                 <p>
-                Relax and unwind at our well-maintained swimming pool with access to an open bar and restaurant beside it.
+                Experience seamless connectivity with our complimentary high-speed internet, ensuring a truly relaxing and enjoyable hotel stay.
                 </p>
               </div>
             </div>

@@ -92,7 +92,7 @@ const Roomstyle = () => {
                         <div className="flip-card-back">
                           <div className="deluxe__two-item-content content">
                             {/* {item.price && <span>Rs {item.price}/Night</span>} */}
-                            <h4>{item.title}</h4>
+                            {/* <h4>{item.title}</h4> */}
                             <p>{item.description}</p>
                             <div className="deluxe__two-item-content-meta content">
                               <ul>

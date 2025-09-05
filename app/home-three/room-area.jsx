@@ -56,7 +56,7 @@ const Roomarea = () => {
                   </p>
                 </div>
               </div>
-              <div className="room__area-list-item">
+              {/* <div className="room__area-list-item">
                 <div className="room__area-list-item-icon">
                   <img src="/img/icon/lounge.png" alt="" />
                 </div>
@@ -79,7 +79,7 @@ const Roomarea = () => {
                     spacious banquet halls with up to 2000 pax capacity.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-xl-4 col-lg-6 xl-mb-30">
@@ -96,7 +96,7 @@ const Roomarea = () => {
                   </p>
                 </div>
               </div>
-              <div className="room__area-list-item">
+              {/* <div className="room__area-list-item">
                 <div className="room__area-list-item-icon">
                   <img src="/img/icon/breakfast1.png" alt="" />
                 </div>
@@ -117,7 +117,7 @@ const Roomarea = () => {
                     Take a dip and refresh yourself. Pool open daily from 7:00 AM to 6:00 PM (costume compulsory).
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="room__area-list-item">
                 <div className="room__area-list-item-icon">
                   <img src="/img/icon/dependable.png" alt="" />

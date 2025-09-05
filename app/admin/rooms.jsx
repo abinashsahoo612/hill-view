@@ -54,15 +54,15 @@ export default function RoomsAdmin() {
         {rooms && rooms.map((room) => (
           <div key={room._id} className="col-md-4 mb-3">
             <div className="card h-100 shadow-sm">
-              <img
+              {/* <img
                 src={room.bannerImage}
                 alt={room.title}
                 className="card-img-top"
                 style={{ height: "150px", objectFit: "cover" }}
-              />
+              /> */}
               <div className="card-body">
                 <h5>{room.title}</h5>
-                <p>{room.short_desc}</p>
+                {/* <p>{room.short_desc}</p> */}
                 <p><strong>Price:</strong> ₹{room.price}</p>
                 <p><strong>Available Rooms:</strong> {room.availableRooms}</p>
                 <button
@@ -82,7 +82,7 @@ export default function RoomsAdmin() {
         <div className="card p-4 mt-5 shadow-sm">
           <h4>Edit Room: {editingRoom.title}</h4>
           <form ref={formRef} onSubmit={handleSubmit}>
-            <div className="mb-2">
+            {/* <div className="mb-2">
               <label>Title</label>
               <input
                 type="text"
@@ -110,7 +110,7 @@ export default function RoomsAdmin() {
                 onChange={handleChange}
                 className="form-control"
               />
-            </div>
+            </div> */}
             <div className="mb-2">
               <label>Price</label>
               <input
@@ -121,7 +121,7 @@ export default function RoomsAdmin() {
                 className="form-control"
               />
             </div>
-            <div className="mb-2">
+            {/* <div className="mb-2">
               <label>Beds</label>
               <input
                 type="number"
@@ -150,7 +150,7 @@ export default function RoomsAdmin() {
                 onChange={handleChange}
                 className="form-control"
               />
-            </div>
+            </div> */}
             <div className="mb-2">
               <label>Available Rooms</label>
               <input

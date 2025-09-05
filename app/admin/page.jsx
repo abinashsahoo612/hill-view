@@ -9,7 +9,7 @@ const Bookings = () => {
   return (
     <>
       <HeaderOne />
-      <BreadCrumb title="Admin" innerTitle="Admin" bgImage="/img/about_banner.jpg"/>
+      <BreadCrumb title="Admin" innerTitle="Admin" bgImage="/img/about_banner.webp"/>
       <RoomsAdmin/>
       <Footer />
       <ScrollToTopButton />

@@ -3,7 +3,7 @@ import Image from "next/image";
 import cleaning from "../../public/img/icon/cleaning-1.png";
 import CarParking from "../../public/img/icon/car-parking.png";
 import Locaion1 from "../../public/img/icon/location-1.png";
-import SwimmingPool from "../../public/img/icon/swimming-pool.png";
+import Wifi from "../../public/img/icon/list-7.png";
 
 const Servicestwo = () => {
   return (
@@ -43,12 +43,12 @@ const Servicestwo = () => {
               <div className="services__two-item">
                 <span>03</span>
                 <div className="services__two-item-icon">
-                  <Image alt="" layout="responsive" src={SwimmingPool} />
+                  <Image alt="" layout="responsive" src={Wifi} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>Swimming pool</h4>
+                  <h4>Free Wifi</h4>
                   <p>
-                  Relax and unwind at our beautifully maintained pool with access included for select room categories and open bar service.
+                  Experience seamless connectivity with our complimentary high-speed internet, ensuring a truly relaxing and enjoyable hotel stay.
                   </p>
                 </div>
               </div>

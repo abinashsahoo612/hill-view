@@ -2714,6 +2714,10 @@ Menu Bar
   .mobile-menu-toggle {
     display: none;
   }
+  .call__area-bg-left h2 {
+    font-size: 40px;
+    line-height: 54px;
+  }
 }
 @media screen and (max-width: 1222px) {
    .header__area-menubar-right-menu ul li a {
@@ -3674,10 +3678,9 @@ Banner Two
   transition: transform 1.5s ease, opacity 1.5s ease;
 }
 .banner__two-content h1 {
-  margin-bottom: 15px;
+  margin-bottom: 45px;
   color: var(--white);
   font-weight: 500;
-  font-size:54px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px);
