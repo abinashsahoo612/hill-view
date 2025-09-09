@@ -64,7 +64,7 @@ export default function RoomsAdmin() {
                 <h5>{room.title}</h5>
                 {/* <p>{room.short_desc}</p> */}
                 <p><strong>Price:</strong> ₹{room.price}</p>
-                <p><strong>Available Rooms:</strong> {room.availableRooms}</p>
+                <p><strong>Total Rooms:</strong> {room.totalRooms}</p>
                 <button
                   className="btn btn-sm btn-warning"
                   onClick={() => handleEdit(room)}
@@ -82,7 +82,7 @@ export default function RoomsAdmin() {
         <div className="card p-4 mt-5 shadow-sm">
           <h4>Edit Room: {editingRoom.title}</h4>
           <form ref={formRef} onSubmit={handleSubmit}>
-            {/* <div className="mb-2">
+            <div className="mb-2">
               <label>Title</label>
               <input
                 type="text"
@@ -110,7 +110,7 @@ export default function RoomsAdmin() {
                 onChange={handleChange}
                 className="form-control"
               />
-            </div> */}
+            </div>
             <div className="mb-2">
               <label>Price</label>
               <input
@@ -121,12 +121,22 @@ export default function RoomsAdmin() {
                 className="form-control"
               />
             </div>
-            {/* <div className="mb-2">
+            <div className="mb-2">
               <label>Beds</label>
               <input
                 type="number"
                 name="bed"
                 value={form.bed || ""}
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-2">
+              <label>Bed Types</label>
+              <input
+                type="text"
+                name="bedType"
+                value={form.bedType || ""}
                 onChange={handleChange}
                 className="form-control"
               />
@@ -150,13 +160,13 @@ export default function RoomsAdmin() {
                 onChange={handleChange}
                 className="form-control"
               />
-            </div> */}
+            </div>
             <div className="mb-2">
-              <label>Available Rooms</label>
+              <label>Total Rooms</label>
               <input
                 type="number"
-                name="availableRooms"
-                value={form.availableRooms || ""}
+                name="totalRooms"
+                value={form.totalRooms || ""}
                 onChange={handleChange}
                 className="form-control"
               />

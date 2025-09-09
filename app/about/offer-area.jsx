@@ -13,7 +13,7 @@ const Offerarea = () => {
                 <span className="subtitle__one">About Us</span>
                 <h2>Welcome to Hotel Hill View, Madikeri</h2>
                   <p>
-                    Madikeri is a hill town in southern India. Framed by the Western Ghats mountain range, it’s known for the Raja’s Seat, a simple monument overlooking forests and rice paddies. In the center, the 17th-century Madikeri Fort features 2 stone elephants at the entrance. Nearby, the domed Omkareshwar Temple is dedicated to the Hindu deity Shiva. To the northwest, cascading Abbey Falls is surrounded by spice plantations.
+                    Nestled in the heart of Coorg’s main city, Madikeri often called the “Kashmir of Karnataka” and the “Scotland of India” Hotel Hill View offers the perfect blend of comfort and convenience. Situated at an altitude of 1,170 meters in the scenic Western Ghats, Coorg is renowned for its tropical highland climate and breathtaking landscapes, making it one of India’s most loved hill stations.Our hotel is ideally located just 500 meters from the KSRTC bus stand, with 5 to 6 popular tourist attractions within a short 1 to 5 km radius. Overlooking the picturesque hills and vibrant town, Hotel Hill View promises a memorable stay surrounded by nature’s beauty and cultural charm.
                   </p>
               </div>
             </div>

@@ -67,6 +67,28 @@ export default function Footer() {
                     </div>
                   </div>
                 ))}
+                <div className="footer__area-widget-contact-item">
+                  <div className="footer__area-widget-contact-item-icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                  </div>
+                  <div className="footer__area-widget-contact-item-content">
+                    {/* Address details */}
+                    <span>
+                      <Link href="#">Check-In 12 PM</Link>
+                    </span>
+                  </div>
+                </div>
+                <div className="footer__area-widget-contact-item">
+                  <div className="footer__area-widget-contact-item-icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </div>
+                  <div className="footer__area-widget-contact-item-content">
+                    {/* Address details */}
+                    <span>
+                      <Link href="#">Check-Out 12 PM</Link>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

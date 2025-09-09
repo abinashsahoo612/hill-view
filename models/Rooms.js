@@ -31,8 +31,9 @@ const RoomsSchema = new mongoose.Schema(
       required: true,
     },
     bed: {
-      type: Number,
-      default: 1,
+      type: String,
+      required: true,
+      trim: true,
     },
     guest: {
       type: Number,
@@ -42,7 +43,7 @@ const RoomsSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    availableRooms: {
+    totalRooms: {
       type: Number,
       required: true,
       default: 0,

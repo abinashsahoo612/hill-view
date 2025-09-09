@@ -23,7 +23,16 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Call Now</span>
-										<h6><Link href="tel:+917676276863">+91 7676276863</Link></h6>
+										<h6><Link href="tel:+918310815401">+91-8310815401/+91-9448422334</Link></h6>
+									</div>
+								</div>
+								<div className="header__area-menubar-right-box-sidebar-popup-contact-item">
+									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-icon">
+										<img src="img/icon/whatsapp.png" style={{height: "45px",marginLeft: "-6px"}}/>
+									</div>
+									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
+										<span>Call Now</span>
+										<h6><Link href="#">+91-9448422334</Link></h6>
 									</div>
 								</div>
 								<div className="header__area-menubar-right-box-sidebar-popup-contact-item">

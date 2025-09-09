@@ -44,7 +44,7 @@ const Deluxe = () => {
                     <div className="deluxe__three-item-image-content-meta">
                       <ul>
                         <li>
-                          <i className="fal fa-bed-alt"></i> ({item.bed}) bed's
+                          <i className="fal fa-bed-alt"></i> {item.bed}
                         </li>
                         <li>
                           <i className="fal fa-users"></i> ({item.guest})

@@ -14,8 +14,8 @@ const footerOne = {
     officeInfos: [
         {link:'https://www.google.com/maps',info:'PGP+28Q Hotel Hillview, Block No 7 ,SY No 17, Hill Rd, Mahadevpet, Madikeri, Karnataka 571201',icon: <i className="fal fa-map-marked-alt"></i>},
         {link:'mailto:hillview@gmail.com',info:'hillview@gmail.com',icon: <i className="fal fal fa-envelope-open-text"></i>},
-        {link:'tel:+917676276863',info:'+91-7676276863',icon: <i className='fal fa-phone-alt'></i>}
+        {link:'tel:+918310815401',info:'+91-8310815401',icon: <i className='fal fa-phone-alt'></i>},
+        {link:'#',info:'+91-9448422334',icon: <i className="fab fa-whatsapp"></i>}
     ],
   }
-
   export default footerOne;

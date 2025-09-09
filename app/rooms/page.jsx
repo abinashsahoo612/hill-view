@@ -98,7 +98,7 @@ const Roomstyle = () => {
                               <ul>
                                 {item.bed && (
                                   <li>
-                                    <i className="fal fa-bed-alt"></i> ({item.bed}) bed's
+                                    <i className="fal fa-bed-alt"></i> {item.bed}
                                   </li>
                                 )}
                                 {item.guest && (

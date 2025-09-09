@@ -79,7 +79,7 @@ const ServicesDetails = () => {
               <div className="services__details-left-content">
                 <h2 className="mb-30">Restaurant</h2>
                 <p className="mb-0">
-                  Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury hotel. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony. For now, we’re happily bringing you tasty meals from outside so you can still enjoy great food until our restaurant is ready.
+                  Get ready to savor a feast fit for royalty at Hill View Restaurant, the upcoming heart of our luxury hotel. Very soon, we’ll open the doors to a world where flavors, aromas, and experiences blend in perfect harmony. In the meantime, as we are still renovating and providing room service, meals are thoughtfully arranged from trusted outside partners to ensure your dining experience remains delightful. Once fully opened, we will upgrade other details to bring you an exceptional culinary journey.
                 </p>
                 {/* uncomment when restaurnat is opened */}
                 {/* <span>

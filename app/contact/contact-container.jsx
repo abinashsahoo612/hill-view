@@ -21,7 +21,18 @@ const Contactcontainer = () => {
                   <div className="contact__area-info-item-content">
                     <span>Emergency Help</span>
                     <h6>
-                      <a href="tel:+917676276863">+91-7676276863</a>
+                      <a href="tel:+918310815401">+91-8310815401</a><br/>
+                    </h6>
+                  </div>
+                </div>
+                <div className="contact__area-info-item">
+                  <div className="contact__area-info-item-icon">
+                    <i className="fab fa-whatsapp"></i>
+                  </div>
+                  <div className="contact__area-info-item-content">
+                    <span>Whatsapp Help</span>
+                    <h6>
+                      <a href="#">+91-9448422334</a>
                     </h6>
                   </div>
                 </div>
