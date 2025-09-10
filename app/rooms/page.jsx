@@ -97,10 +97,21 @@ const Roomstyle = () => {
                             <div className="deluxe__two-item-content-meta content">
                               <ul>
                                 {item.bed && (
-                                  <li>
-                                    <i className="fal fa-bed-alt"></i> {item.bed}
-                                  </li>
+                                  <ul>
+                                    {item.bed.includes('&')
+                                      ? item.bed.split('&').map((bedType, index) => (
+                                          <li key={index}>
+                                            <i className="fal fa-bed-alt"></i> {bedType.trim()}
+                                          </li>
+                                        ))
+                                      : (
+                                          <li>
+                                            <i className="fal fa-bed-alt"></i> {item.bed}
+                                          </li>
+                                        )}
+                                  </ul>
                                 )}
+
                                 {item.guest && (
                                   <li>
                                     <i className="fal fa-users"></i> ({item.guest}) Guest
