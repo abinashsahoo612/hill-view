@@ -11,6 +11,7 @@ import Roomarea from "@/app/home-three/room-area";
 import Services from "@/app/home-three/services";
 import MadMan from "./home-three/madMan";
 import HeaderOne from "./header/HeaderOne";
+import BannerCta from "./banner/banner-cta";
 
 const Home3 = () => {
   return (
@@ -18,6 +19,7 @@ const Home3 = () => {
       <SEO pageTitle='Home Three' />
         <HeaderOne />
         <Banner />
+        {/* <BannerCta /> */}
         <Deluxe />
         <MadMan/>
         <Callarea />

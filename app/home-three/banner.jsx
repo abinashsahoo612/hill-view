@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import ModalVideo from "react-modal-video";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
-import Link from "next/link";
 const bannerData = {
   bannerItem: [
     {
