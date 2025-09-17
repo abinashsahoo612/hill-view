@@ -66,7 +66,7 @@ const Servicestwo = () => {
                 <div className="services__two-item-content">
                   <h4>PickUp & Drop</h4>
                   <p>
-                  We provide reliable pickup and drop services for your travel convenience within Sambalpur and nearby transit points.
+                  Avail reliable transportation services with our convenient pickup and drop facility in and around Madikeri.
                   </p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const Servicestwo = () => {
                 <div className="services__two-item-content">
                   <h4>Hill View's Kitchen</h4>
                   <p>
-                  Enjoy delicious multi-cuisine meals from 11:30 AM to 11:00 PM at our in-house restaurant.
+                    Renovating & room service available, after opening fully we upgrade other details.
                   </p>
                 </div>
               </div>

@@ -12,17 +12,17 @@ import SEO from "@/components/seo";
 import { useEffect, useState } from "react";
 
 const Roomstyle = () => {
-  const [rooms, setRooms] = useState([]);
+//   const [rooms, setRooms] = useState([]);
 
-  const fetchRooms = async () => {
-    const res = await fetch("/api/rooms");
-    const data = await res.json();
-    setRooms(data);
-  };
+//   const fetchRooms = async () => {
+//     const res = await fetch("/api/rooms");
+//     const data = await res.json();
+//     setRooms(data);
+//   };
 
-  useEffect(() => {
-    fetchRooms();
-  }, []);
+//   useEffect(() => {
+//     fetchRooms();
+//   }, []);
 
   return (
     <>
@@ -38,7 +38,7 @@ const Roomstyle = () => {
           <div className="row">
             <div className="col-xl-12 order-first order-lg-1 lg-mb-30">
               <div className="row justify-content-space-between">
-              {Object.entries(rooms).map(([key, item]) => (
+              {Object.entries(roomStyleAllBlogs).map(([key, item]) => (
                 <div key={key} className="col-xl-4 col-md-4 mb-30">
                   {/* <Link href={`/room-details/${item.title.replace(/\s+/g, '-').toLowerCase()}`}> */}
                   <Link href="#">
@@ -52,14 +52,14 @@ const Roomstyle = () => {
                             src={item.bannerImage}
                             alt={item.title}
                             className="card-img-top"
-                            style={{ height: "100%", objectFit: "cover" }}
+                            // style={{ height: "100%", objectFit: "cover" }}
                           />
                           </div>
                           <div className="front-info">
                             <div className="deluxe__two-item-content content">
                               {item.price && <span>Rs {item.price}+TAX/Night</span>}
-                              <h4>{item.title}</h4>
-                              <p>{item.short_desc}</p>
+                              <h4 className="single-line">{item.title}</h4>
+                              <p>{item.des}</p>
                               {/* <div className="deluxe__two-item-content-meta content">
                                 <ul>
                                   {item.bed && (
@@ -122,11 +122,11 @@ const Roomstyle = () => {
                                     <i className="fal fa-warehouse-alt"></i> ({item.area}) Area
                                   </li>
                                 )}
-                                {item.maxguest && (
+                                {/* {item.maxguest && (
                                   <li>
                                     <i className="fal fa-users"></i> ({item.maxguest}) Max Guests
                                   </li>
-                                )}
+                                )} */}
                               </ul>
                             </div>
                           </div>
