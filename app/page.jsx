@@ -19,7 +19,7 @@ const Home3 = () => {
       <SEO pageTitle='Home Three' />
         <HeaderOne />
         <Banner />
-        {/* <BannerCta /> */}
+        <BannerCta />
         <Deluxe />
         <MadMan/>
         <Callarea />

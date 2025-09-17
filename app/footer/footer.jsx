@@ -69,7 +69,7 @@ export default function Footer() {
                 ))}
                 <div className="footer__area-widget-contact-item">
                   <div className="footer__area-widget-contact-item-icon">
-                    <i class="fas fa-sign-in-alt"></i>
+                    <i className="fas fa-sign-in-alt"></i>
                   </div>
                   <div className="footer__area-widget-contact-item-content">
                     {/* Address details */}
@@ -80,7 +80,7 @@ export default function Footer() {
                 </div>
                 <div className="footer__area-widget-contact-item">
                   <div className="footer__area-widget-contact-item-icon">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i className="fas fa-sign-out-alt"></i>
                   </div>
                   <div className="footer__area-widget-contact-item-content">
                     {/* Address details */}

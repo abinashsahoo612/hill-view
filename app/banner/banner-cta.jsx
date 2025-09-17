@@ -1,31 +1,53 @@
+"use client";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+
 const BannerCta = () => {
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!checkIn || !checkOut) {
+      setError("Please select both Check In and Check Out dates");
+      return;
+    }
+    setError("");
+
+    // Redirect with query params
+    router.push(
+      `/searched-rooms?checkIn=${encodeURIComponent(checkIn)}&checkOut=${encodeURIComponent(checkOut)}`
+    );
+  };
+
   return (
     <div className="row">
-      <form action="#">
+      <form onSubmit={handleSubmit}>
         <div className="check__area">
           <div className="check__area-item">
             <p>
               Check In
-              <input id="date" type="date" />
+              <input
+                type="date"
+                value={checkIn}
+                onChange={(e) => setCheckIn(e.target.value)}
+                required
+              />
             </p>
           </div>
           <div className="check__area-item">
             <p>
               Check Out
-              <input id="date2" type="date" />
+              <input
+                type="date"
+                value={checkOut}
+                onChange={(e) => setCheckOut(e.target.value)}
+                required
+              />
             </p>
-          </div>
-          <div className="check__area-item">
-            <div className="check__area-item-room">
-              <p>Room</p>
-              <select className="select" name="select">
-                <option value="1">1 Room</option>
-                <option value="2">2 Room</option>
-                <option value="3">3 Room</option>
-                <option value="4">4 Room</option>
-                <option value="5">5 Room</option>
-              </select>
-            </div>
           </div>
           <div className="check__area-item button">
             <button className="theme-btn" type="submit">
@@ -34,6 +56,7 @@ const BannerCta = () => {
           </div>
         </div>
       </form>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
