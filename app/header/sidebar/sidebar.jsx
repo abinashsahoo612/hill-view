@@ -41,7 +41,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Quick Email</span>
-										<h6><Link href="mailto:hillview@gmail.com">hillview@gmail.com</Link></h6>
+										<h6><Link href="mailto:coorghillview@gmail.com">coorghillview@gmail.com</Link></h6>
 									</div>
 								</div>
 								<div className="header__area-menubar-right-box-sidebar-popup-contact-item">
@@ -50,7 +50,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Office Address</span>
-										<h6><Link href="#">CPGP+28Q Hotel Hillview, Block No 7 ,SY No 17, Hill Rd, Mahadevpet, Madikeri, Karnataka 571201</Link></h6>
+										<h6><Link href="#">CPGP+28Q Hotel Hillview, Block No 7 ,SY No 17, Hill Road, Madikeri, Karnataka 571201</Link></h6>
 									</div>
 								</div>
 							</div>

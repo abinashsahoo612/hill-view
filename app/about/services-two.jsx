@@ -64,9 +64,9 @@ const Servicestwo = () => {
                   <Image alt="" layout="responsive" src={Locaion1} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>PickUp & Drop</h4>
+                  <h4>Travel Desk Details</h4>
                   <p>
-                  Avail reliable transportation services with our convenient pickup and drop facility in and around Madikeri.
+                  Avail reliable transportation services with our convenient travel details facility in and around Madikeri.
                   </p>
                 </div>
               </div>
@@ -94,7 +94,8 @@ const Servicestwo = () => {
                 <div className="services__two-item-content">
                   <h4>Room Service</h4>
                   <p>
-                  Enjoy prompt food and beverage delivery to your room from 7:30 AM to 11:00 PM.
+                  As per guest requirement room cleaning facility available from
+                    10:30 AM to 06:00 PM.
                   </p>
                 </div>
               </div>
@@ -108,7 +109,8 @@ const Servicestwo = () => {
                 <div className="services__two-item-content">
                   <h4>Hill View's Kitchen</h4>
                   <p>
-                    Renovating & room service available, after opening fully we upgrade other details.
+                    Enjoy delicious multi-cuisine meals from 07:30 AM to 11:00
+                    PM at our in-house restaurant.
                   </p>
                 </div>
               </div>

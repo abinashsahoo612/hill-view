@@ -52,9 +52,9 @@ const Services = () => {
                 <img src="/img/icon/location-1.png" alt="" />
               </div>
               <div className="services__two-item-content">
-                <h4>PickUp & Drop</h4>
+                <h4>Travel Desk Details</h4>
                 <p>
-                Avail reliable transportation services with our convenient pickup and drop facility in and around Madikeri.
+                  Avail reliable transportation services with our convenient travel details facility in and around Madikeri.
                 </p>
               </div>
             </div>

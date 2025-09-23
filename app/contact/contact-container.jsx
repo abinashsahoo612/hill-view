@@ -43,7 +43,7 @@ const Contactcontainer = () => {
                   <div className="contact__area-info-item-content">
                     <span>Quick Email</span>
                     <h6>
-                      <a href="mailto:hillview@gmail.com">hillview@gmail.com</a>
+                      <a href="mailto:coorghillview@gmail.com">coorghillview@gmail.com</a>
                     </h6>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ const Contactcontainer = () => {
                   <div className="contact__area-info-item-content">
                     <span>Office Address</span>
                     <h6>
-                      <a href="#">CPGP+28Q Hotel Hillview, Block No 7 ,SY No 17, Hill Rd, Mahadevpet, Madikeri, Karnataka 571201</a>
+                      <a href="#">CPGP+28Q Hotel Hillview, Block No 7 ,SY No 17, Hill Road, Madikeri, Karnataka 571201</a>
                     </h6>
                   </div>
                 </div>

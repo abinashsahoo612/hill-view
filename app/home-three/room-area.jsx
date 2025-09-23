@@ -37,7 +37,7 @@ const Roomarea = () => {
                   <img src="/img/icon/air-conditioner (1).png" alt="" />
                 </div>
                 <div className="room__area-list-item-content">
-                <h5>Air-Conditioned Rooms</h5>
+                <h5>Air-Conditioned Room</h5>
                   <p>
                     All rooms are air-conditioned,
                     ensuring a cool and cozy stay throughout the seasons.
@@ -51,7 +51,7 @@ const Roomarea = () => {
                 <div className="room__area-list-item-content">
                 <h5>Hill View's Kitchen</h5>
                   <p>
-                    Enjoy delicious multi-cuisine meals from 11:30 AM to 11:00
+                    Enjoy delicious multi-cuisine meals from 07:30 AM to 11:00
                     PM at our in-house restaurant.
                   </p>
                 </div>
@@ -91,8 +91,8 @@ const Roomarea = () => {
                 <div className="room__area-list-item-content">
                 <h5>Room Service</h5>
                   <p>
-                    Enjoy prompt food and beverage delivery to your room from
-                    7:30 AM to 11:00 PM.
+                    As per guest requirement room cleaning facility available from
+                    10:30 AM to 06:00 PM.
                   </p>
                 </div>
               </div>

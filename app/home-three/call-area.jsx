@@ -8,7 +8,7 @@ const Callarea = () => {
         >
           <div className="col-xl-8">
             <div className="call__area-bg-left">
-              <h2>Enjoy 10% off for direct bookings.</h2>
+              <h2>Enjoy 15% off for direct bookings.</h2>
             </div>
           </div>
           

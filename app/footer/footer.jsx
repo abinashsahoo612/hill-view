@@ -85,7 +85,7 @@ export default function Footer() {
                   <div className="footer__area-widget-contact-item-content">
                     {/* Address details */}
                     <span>
-                      <Link href="#">Check-Out 12 PM</Link>
+                      <Link href="#">Check-Out 11 AM</Link>
                     </span>
                   </div>
                 </div>
