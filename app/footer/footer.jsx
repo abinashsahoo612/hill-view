@@ -118,6 +118,9 @@ export default function Footer() {
                   Raja seat<span>1.5 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
+                  Omkareswara Temple<span>1 K.M.</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
                   Rajas Tomb<span>1.0 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>

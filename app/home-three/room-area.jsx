@@ -11,8 +11,7 @@ const Roomarea = () => {
               <h2>Facilities & Amenities</h2>
               <p>
                 At Hill View, we turn moments into memories with our premium
-                services including AC rooms, complimentary breakfast, a
-                full-service restaurant, lounge, and a refreshing pool — all
+                services including AC and NON-AC rooms, room decoration and cake for honeymoon couple, birthdays and anniversaries with extra charge — all
                 designed for your comfort and relaxation.
               </p>
               <div className="room__area-title-contact">
@@ -37,10 +36,15 @@ const Roomarea = () => {
                   <img src="/img/icon/air-conditioner (1).png" alt="" />
                 </div>
                 <div className="room__area-list-item-content">
-                <h5>Air-Conditioned Room</h5>
+                <h5>30 total Rooms</h5>
                   <p>
-                    All rooms are air-conditioned,
-                    ensuring a cool and cozy stay throughout the seasons.
+                    16 standard rooms.
+                  </p>
+                  <p>
+                    8 triple rooms both ac and non-ac.
+                  </p>
+                  <p>
+                    6 quadruple rooms both ac and non-ac.
                   </p>
                 </div>
               </div>
@@ -89,7 +93,7 @@ const Roomarea = () => {
                   <img src="/img/icon/room-service (1).png" alt="" />
                 </div>
                 <div className="room__area-list-item-content">
-                <h5>Room Service</h5>
+                <h5>Room Cleaning</h5>
                   <p>
                     As per guest requirement room cleaning facility available from
                     10:30 AM to 06:00 PM.

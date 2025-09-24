@@ -22,9 +22,9 @@ const Servicestwo = () => {
                   <Image alt="" layout="responsive" src={cleaning} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>Room Cleaning</h4>
+                  <h4>Room Service</h4>
                   <p>
-                  Enjoy professional in-room service any time of the day, with same-day laundry, housekeeping, and more for your comfort.
+                  Room service from 7.30 to 11 pm, nextday laundry service and hot water from 4 am to 10 am.
                   </p>
                 </div>
               </div>
@@ -78,9 +78,15 @@ const Servicestwo = () => {
                   <Image alt="" layout="responsive" src={Ac} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>Air-Conditioned Rooms</h4>
+                  <h4>30 total Rooms</h4>
                   <p>
-                  All rooms are air-conditioned,ensuring a cool and cozy stay throughout the seasons.
+                    16 standard rooms.
+                  </p>
+                  <p>
+                    8 triple rooms both ac and non-ac.
+                  </p>
+                  <p>
+                    6 quadruple rooms both ac and non-ac.
                   </p>
                 </div>
               </div>
@@ -92,7 +98,7 @@ const Servicestwo = () => {
                   <Image alt="" layout="responsive" src={Room} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>Room Service</h4>
+                  <h4>Room Cleaning</h4>
                   <p>
                   As per guest requirement room cleaning facility available from
                     10:30 AM to 06:00 PM.

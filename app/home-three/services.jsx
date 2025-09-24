@@ -10,9 +10,9 @@ const Services = () => {
                 <img src="/img/icon/cleaning-1.png" alt="" />
               </div>
               <div className="services__two-item-content">
-                <h4>Room Cleaning</h4>
+                <h4>Room Service</h4>
                 <p>
-                Enjoy round-the-clock room service, same-day laundry, and daily housekeeping to make your stay seamless and stress-free.
+                Room service from 7.30 to 11 pm, nextday laundry service and hot water from 4 am to 10 am
                 </p>
               </div>
             </div>
