@@ -2,10 +2,10 @@
 
 const galleryData = {
   galleryImage: [
-    { image: "/img/banner/img5.jpg" },
-    { image: "/img/banner/img1.jpeg" },
-    { image: "/img/rooms/quadruple-standard-deluxe/banner.jpg" },
-    { image: "/img/banner/img4.jpg" },
+    { image: "/img/about/img1.jpeg" },
+    { image: "/img/about/img2.jpeg" },
+    { image: "/img/about/img3.jpeg" },
+    { image: "/img/about/img4.jpeg" },
   ],
 };
 

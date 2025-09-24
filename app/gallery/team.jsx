@@ -6,7 +6,7 @@ const Team = () => {
   const teamItem = [
     'img/banner/img1.jpeg',
     'img/banner/img2.jpeg',
-    'img/banner/img3.jpeg',
+    'img/parking.jpeg',
     'img/gallery/gallery_img2.jpg',
     'img/gallery/gallery_img1.jpg',
     'img/rooms/double-standard/banner.jpeg',

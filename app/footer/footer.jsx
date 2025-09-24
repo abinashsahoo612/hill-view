@@ -118,20 +118,21 @@ export default function Footer() {
                   Raja seat<span>1.5 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
-                  Abby falls<span>8 k.M.</span>
-                </p>
-                <p style={{color: '#CCCCCC'}}>
                   Rajas Tomb<span>1.0 K.M.</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
                   Fort<span>1.0 K.M</span>
                 </p>
                 <p style={{color: '#CCCCCC'}}>
-                  Mandalpatti<span>18 K.M</span>
-                </p>
-                <p style={{color: '#CCCCCC'}}>
                   Gen. ThimmaiaH Museum<span>1.5 K.M</span>
                 </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Abby falls<span>8 k.M.</span>
+                </p>
+                <p style={{color: '#CCCCCC'}}>
+                  Mandalpatti<span>18 K.M</span>
+                </p>
+                
                 {/* <p style={{color: '#CCCCCC'}}>
                   Dubare Elephant Camp<span>36 K.M</span>
                 </p>
