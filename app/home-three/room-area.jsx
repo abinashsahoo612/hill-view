@@ -36,15 +36,15 @@ const Roomarea = () => {
                   <img src="/img/icon/air-conditioner (1).png" alt="" />
                 </div>
                 <div className="room__area-list-item-content">
-                <h5>30 total Rooms</h5>
+                <h5>Total Accommodation: 30 Rooms</h5>
                   <p>
-                    16 standard rooms.
+                    16 standard rooms (AC & Non-AC).
                   </p>
                   <p>
-                    8 triple rooms both ac and non-ac.
+                    8 Triple Occupancy Rooms (AC & Non-AC).
                   </p>
                   <p>
-                    6 quadruple rooms both ac and non-ac.
+                    6 Quadruple Occupancy Rooms (AC & Non-AC).
                   </p>
                 </div>
               </div>

@@ -24,7 +24,7 @@ const Servicestwo = () => {
                 <div className="services__two-item-content">
                   <h4>Room Service</h4>
                   <p>
-                  Room service from 7.30 to 11 pm, nextday laundry service and hot water from 4 am to 10 am.
+                  Room service from 7.30 to 11 pm, nextday laundry service and hot water available from 4 am to 10 am.
                   </p>
                 </div>
               </div>
@@ -78,15 +78,15 @@ const Servicestwo = () => {
                   <Image alt="" layout="responsive" src={Ac} />
                 </div>
                 <div className="services__two-item-content">
-                  <h4>30 total Rooms</h4>
+                  <h4>Total Accommodation: 30 Rooms</h4>
                   <p>
-                    16 standard rooms.
+                    16 standard rooms (AC & Non-AC).
                   </p>
                   <p>
-                    8 triple rooms both ac and non-ac.
+                    8 Triple Occupancy Rooms (AC & Non-AC).
                   </p>
                   <p>
-                    6 quadruple rooms both ac and non-ac.
+                    6 Quadruple Occupancy Rooms (AC & Non-AC).
                   </p>
                 </div>
               </div>

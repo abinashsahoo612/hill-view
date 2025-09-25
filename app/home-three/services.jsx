@@ -12,7 +12,7 @@ const Services = () => {
               <div className="services__two-item-content">
                 <h4>Room Service</h4>
                 <p>
-                Room service from 7.30 to 11 pm, nextday laundry service and hot water from 4 am to 10 am
+                Room service from 7.30 to 11 pm, nextday laundry service and hot water available from 4 am to 10 am
                 </p>
               </div>
             </div>
