@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { connectDB } from "@/lib/mongodb";
-import Users from "@/models/Users";
+import { pool } from "@/lib/db";   // <-- your MySQL pool
 import bcrypt from "bcryptjs";
 
 const handler = NextAuth({
@@ -9,27 +8,40 @@ const handler = NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        await connectDB();
+        try {
+          // Find user by username or email
+          const [rows] = await pool.query(
+            "SELECT id, name, email, password_hash, role FROM users WHERE email = ? LIMIT 1",
+            [credentials.email]
+          );
 
-        const user = await Users.findOne({ username: credentials.username });
+          if (!rows.length) {
+            throw new Error("User not found");
+          }
 
-        if (!user) throw new Error("User not found");
+          const user = rows[0];
 
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
-        if (!isValid) throw new Error("Invalid password");
+          // Validate password
+          const isValid = await bcrypt.compare(
+            credentials.password,
+            user.password_hash
+          );
+          if (!isValid) throw new Error("Invalid password");
 
-        return {
-          id: user._id.toString(),
-          name: user.username,
-          role: user.role,
-        };
+          // Return user object for session/jwt
+          return {
+            id: user.id,
+            email: user.email,
+            role: user.role,
+          };
+        } catch (err) {
+          console.error("Auth error:", err);
+          throw new Error("Authentication failed");
+        }
       },
     }),
   ],
@@ -39,19 +51,21 @@ const handler = NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.role = user.role; // attach role
+        token.role = user.role;
+        token.id = user.id;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
         session.user.role = token.role;
+        session.user.id = token.id;
       }
       return session;
     },
   },
   pages: {
-    // signIn: "/admin",
+    // signIn: "/login", // you can add a custom login page
   },
 });
 

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const body = await request.json();
-  const { user_id, check_in_date, check_out_date, items } = body;
+  const { user_id, check_in_date, check_out_date, items, total_price, discount } = body;
 
   if (!user_id || !check_in_date || !check_out_date || !items || !items.length) {
     return NextResponse.json({ error: "Missing data" }, { status: 400 });
@@ -21,9 +21,9 @@ export async function POST(request) {
 
     const [result] = await conn.query(
       `INSERT INTO bookings 
-        (user_id, check_in_date, check_out_date, status, payment_status, expires_at, created_at)
-       VALUES (?, ?, ?, 'pending_payment', 'pending', ?, NOW())`,
-      [user_id, check_in_date, check_out_date, expiresAt]
+        (user_id, check_in_date, check_out_date, total_price, discount, status, payment_status, expires_at, created_at)
+       VALUES (?, ?, ?, ?, ?, 'confirmed', 'paid', ?, NOW())`,
+      [user_id, check_in_date, check_out_date, total_price, discount, expiresAt]
     );
 
     const bookingId = result.insertId;

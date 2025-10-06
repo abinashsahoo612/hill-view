@@ -1,19 +1,84 @@
+"use client";
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 
-const Sidebar = ({count,totalPrice}) => {
+const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
+    const { data: session } = useSession();
+    const handleBooking = async () => {
+        if (!session) {
+        window.location.href = "/login"; 
+        return;
+        }
+        try {
+        const res = await fetch("/api/create-booking", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+            user_id: session.user.id,  
+            items: details,            
+            check_in_date: checkIn,
+            check_out_date: checkOut,
+            total_price: totalPrice,
+            discount: 15
+            }),
+        });
+
+        if (!res.ok) throw new Error("Booking failed");
+
+        const data = await res.json();
+        console.log("Booking success:", data);
+
+        // Redirect to booking confirmation or searched room
+        window.location.href = `/bookings`;
+        } catch (err) {
+        console.error("Error:", err);
+        alert("Something went wrong!");
+        }
+    };
     return (
-        <div className="col-xl-3 col-lg-4 lg-mb-30">
+        <div className="col-xl-4 col-lg-4 lg-mb-30">
             <div className="all__sidebar">
                 <div className="all__sidebar-item">
+                    {!disableBook && (
+                        <div className="room__details">
+                            <h5>Booking Details</h5>
+                            <ol>
+                                {details.map((room, index) => (
+                                <li key={index}>
+                                    <strong>{room.name}</strong> - {room.quantity} × RS {room.price} ={" "}
+                                    <span>RS {room.quantity * room.price}</span>
+                                </li>
+                                ))}
+                            </ol>
+                        </div>
+                    )}
                     <h5>Your Price</h5>
                     <div className="all__sidebar-item-price">
                         <ul>
                             <li><i className="fal fa-bed-alt"></i>Total ({count}) Rooms</li>
-                            {/* <li><i className="fal fa-users"></i>(6) Guest's</li> */}
+                            <li><i className="fal fa-wallet"></i>Total Price: RS {totalPrice}</li>
+                            <li><i className="fal fa-badge-percent"></i>Discount 15%</li>
                         </ul>
-                        <h4>RS {totalPrice}<span>/Night</span></h4>
-                        <a className="theme-btn" href="/contact">Book Now<i className="fal fa-long-arrow-right"></i></a>
+
+                        {/* Show discount calculation */}
+                        <h4>
+                            <span style={{ textDecoration: "line-through", color: "gray", fontSize: "14px", marginRight: "8px" }}>
+                            RS {totalPrice}
+                            </span>
+                            RS {(totalPrice - totalPrice * 0.15).toFixed(2)} 
+                            
+                        </h4>
+                    </div>
+
+                    <div className="mt-30">
+                        <a
+                          className={`theme-btn${disableBook ? ' disabled' : ''}`}
+                          onClick={handleBooking}
+                          style={{ cursor:"pointer",pointerEvents: disableBook ? 'none' : 'auto', opacity: disableBook ? 0.5 : 1 }}
+                        >
+                          Book Now<i className="fal fa-long-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 {/* <div className="all__sidebar-item">

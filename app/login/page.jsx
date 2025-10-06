@@ -19,7 +19,7 @@ export default function LoginPage() {
         }
     }
   const router = useRouter();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -31,7 +31,7 @@ export default function LoginPage() {
 
     const res = await signIn("credentials", {
       redirect: false,
-      username,
+      email,
       password,
     });
 
@@ -59,18 +59,18 @@ export default function LoginPage() {
 
                 <form onSubmit={handleSubmit} noValidate>
                 <div className="mb-3">
-                    <label htmlFor="username" className="form-label">
-                    Username
+                    <label htmlFor="email" className="form-label">
+                    Email
                     </label>
                     <input
-                    id="username"
+                    id="email"
                     type="text"
                     required
                     disabled={loading}
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="form-control"
-                    placeholder="Enter username"
+                    placeholder="Enter email"
                     />
                 </div>
 

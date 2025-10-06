@@ -34,7 +34,7 @@ const SearchedRoomsPage = () => {
     <>
     <HeaderOne />
     <BreadCrumb title="Available Rooms" innerTitle="available-rooms" bgImage="/img/banner/img2.jpg"/>
-    <Roomlist roomList={rooms}/>  
+    <Roomlist roomList={rooms} checkIn={checkIn} checkOut={checkOut}/>  
     <Footer/>
     </>
   );
