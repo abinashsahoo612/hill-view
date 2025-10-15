@@ -15,7 +15,7 @@ const handler = NextAuth({
         try {
           // Find user by username or email
           const [rows] = await pool.query(
-            "SELECT id, name, email, password_hash, role FROM users WHERE email = ? LIMIT 1",
+            "SELECT id, name, email, password_hash, role, phone FROM users WHERE email = ? LIMIT 1",
             [credentials.email]
           );
 
@@ -37,6 +37,7 @@ const handler = NextAuth({
             id: user.id,
             email: user.email,
             role: user.role,
+            phone: user.phone,
           };
         } catch (err) {
           console.error("Auth error:", err);
@@ -53,6 +54,7 @@ const handler = NextAuth({
       if (user) {
         token.role = user.role;
         token.id = user.id;
+        token.phone = user.phone;
       }
       return token;
     },
@@ -60,6 +62,7 @@ const handler = NextAuth({
       if (token) {
         session.user.role = token.role;
         session.user.id = token.id;
+        session.user.phone = token.phone;
       }
       return session;
     },

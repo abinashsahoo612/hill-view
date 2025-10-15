@@ -15,7 +15,7 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-            user_id: session.user.id,  
+            user: session.user,
             items: details,            
             check_in_date: checkIn,
             check_out_date: checkOut,
@@ -27,10 +27,31 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
         if (!res.ok) throw new Error("Booking failed");
 
         const data = await res.json();
-        console.log("Booking success:", data);
+        // console.log(data.payment_session_id);
+        window.location.href = `https://payments-test.cashfree.com/order/#${data.payment_session_id}`;
 
-        // Redirect to booking confirmation or searched room
-        window.location.href = `/bookings`;
+        // const bookingId = data.booking_id;
+
+        // // --- Redirect to Cashfree Hosted Checkout ---
+        // const orderId = "ORD-" + bookingId + "-" + Date.now();
+        // const discountedAmount = (totalPrice - totalPrice * 0.15).toFixed(2);
+        // const appId = "CF10796964D3MT42JVGGUC73BSHEPG";
+        // const returnUrl = `${process.env.NEXT_PUBLIC_RETURN_URL}?booking_id=${bookingId}`;
+
+        // const baseUrl =
+        //     process.env.NODE_ENV === "prod"
+        //     ? "https://www.cashfree.com/pgappsdemo"
+        //     : "https://test.cashfree.com/pgappsdemo";
+
+        // const paymentUrl = `${baseUrl}?appId=${appId}&orderId=${orderId}&orderAmount=${discountedAmount}&orderCurrency=INR&orderNote=Hotel%20Booking&customerName=${encodeURIComponent(
+        //     session.user.name
+        // )}&customerEmail=${encodeURIComponent(
+        //     session.user.email
+        // )}&customerPhone=${encodeURIComponent(
+        //     session.user.phone || "9999999999"
+        // )}&returnUrl=${encodeURIComponent(returnUrl)}`;
+
+        // window.location.href = paymentUrl;
         } catch (err) {
         console.error("Error:", err);
         alert("Something went wrong!");
