@@ -3,22 +3,16 @@ import Footer from "../footer/footer";
 import HeaderOne from "../header/HeaderOne";
 import BreadCrumb from "../breadcrumb/breadcrumb";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useSearchParams,useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function RegisterPage() {
     const { data: session } = useSession();
-    console.log(session);
-    if (session) {   
-        if (session.user.role === "admin") {
-        redirect("/admin");
-        } else if (session.user.role === "user") {
-        redirect("/profile");
-        }
-    }
+    
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/";
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -31,23 +25,29 @@ export default function RegisterPage() {
     setLoading(true);
     setError("");
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      name,
-      email,
-      phone,
-      password,
-    });
+    try {
+      const res = await fetch("/api/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, password }),
+      });
 
-    setLoading(false);
-    if (res?.ok) {
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Registration failed");
+      } else {
+        setLoading(false);
+        router.push("/login?redirect="+encodeURIComponent(redirect));
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    } finally {
       setLoading(false);
-      router.push("/");
-
-    } else {
-      setError("Invalid credentials. Please try again.");
     }
   }
+
 
   return (
     <>
@@ -145,6 +145,7 @@ export default function RegisterPage() {
                     )}
                 </button>
                 </form>
+                <p>Already have an account? <a href="/login" style={{color:"blue"}}>Sign in</a></p>
             </div>
             </div>
         </div>

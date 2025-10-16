@@ -7,9 +7,11 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
     const { data: session } = useSession();
     const handleBooking = async () => {
         if (!session) {
-        window.location.href = "/login"; 
-        return;
+            const fullPath = window.location.pathname + window.location.search;
+            window.location.href = `/login?redirect=${encodeURIComponent(fullPath)}`;
+            return;
         }
+
         try {
         const res = await fetch("/api/create-booking", {
             method: "POST",

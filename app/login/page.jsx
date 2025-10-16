@@ -4,21 +4,17 @@ import HeaderOne from "../header/HeaderOne";
 import BreadCrumb from "../breadcrumb/breadcrumb";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useSearchParams,useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function LoginPage() {
     const { data: session } = useSession();
     console.log(session);
-    if (session) {   
-        if (session.user.role === "admin") {
-        redirect("/admin");
-        } else if (session.user.role === "user") {
-        redirect("/profile");
-        }
-    }
+    
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -38,7 +34,7 @@ export default function LoginPage() {
     setLoading(false);
     if (res?.ok) {
       setLoading(false);
-      router.push("/");
+      router.push(redirect);
 
     } else {
       setError("Invalid credentials. Please try again.");
@@ -109,6 +105,12 @@ export default function LoginPage() {
                     )}
                 </button>
                 </form>
+                <p>
+                  Don’t have an account?{" "}
+                  <a href={`/register?redirect=${encodeURIComponent(redirect)}`}>
+                    Sign up
+                  </a>
+                </p>
             </div>
             </div>
         </div>
