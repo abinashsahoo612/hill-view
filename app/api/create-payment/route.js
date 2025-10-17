@@ -1,33 +1,53 @@
-import { pool } from '../../lib/db';
+import { pool } from "@/lib/db";
+import { NextResponse } from "next/server";
+import { randomUUID } from "crypto";
 
+export async function POST(request) {
+  const { booking_id, status, payment_status, amount, payment_provider = "Manual" } =
+    await request.json();
 
-export default async function handler(req, res) {
-    if (req.method !== 'POST') return res.status(405).end();
-    const { booking_id } = req.body;
-    if (!booking_id) return res.status(400).json({ error: 'Missing booking_id' });
+  if (!booking_id || !amount) {
+    return NextResponse.json({ error: "Missing booking_id or amount" }, { status: 400 });
+  }
 
+  const connection = await pool.getConnection();
+  await connection.beginTransaction();
 
-    try {
-        // compute amount
-        const [items] = await pool.query(`SELECT bi.quantity, rc.price_per_night FROM booking_items bi JOIN room_categories rc ON bi.category_id = rc.id WHERE bi.booking_id = ?`, [booking_id]);
-        if (!items.length) return res.status(400).json({ error: 'No booking items' });
+  try {
+    await connection.query(
+      `UPDATE bookings 
+       SET status = ?, payment_status = ?
+       WHERE id = ?`,
+      [status || "confirmed", payment_status || "paid", booking_id]
+    );
 
+    const transaction_id = "TXN-" + randomUUID().slice(0, 10); 
+    await connection.query(
+      `INSERT INTO payments 
+        (booking_id, payment_provider, transaction_id, amount, currency, created_at) 
+       VALUES (?, ?, ?, ?, ?, NOW())`,
+      [
+        booking_id,
+        payment_provider,
+        transaction_id,
+        amount,
+        "INR",
+      ]
+    );
 
-        let total = 0;
-        for (const it of items) total += it.quantity * parseFloat(it.price_per_night || 0);
+    await connection.commit();
+    connection.release();
 
-
-        // TODO: Call payment provider SDK to create an order. Example with Razorpay would go here.
-        // For now, return a stub response to the frontend.
-
-
-        return res.json({
-            provider: process.env.PAYMENT_PROVIDER || 'razorpay',
-            order_id: `ORDER-STUB-${booking_id}-${Date.now()}`,
-            amount: total
-        });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: err.message });
-    }
+    return NextResponse.json({
+      success: true,
+      booking_id,
+      transaction_id,
+      message: "Payment recorded successfully",
+    });
+  } catch (err) {
+    await connection.rollback();
+    connection.release();
+    console.error("Payment update failed:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
 }

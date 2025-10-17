@@ -5,6 +5,8 @@ import { useSession, signOut } from "next-auth/react";
 
 const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
     const { data: session } = useSession();
+    const [showPaymentModal, setShowPaymentModal] = useState(false);
+    const [bookingData, setBookingData] = useState(null);
     const handleBooking = async () => {
         if (!session) {
             const fullPath = window.location.pathname + window.location.search;
@@ -29,35 +31,44 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
         if (!res.ok) throw new Error("Booking failed");
 
         const data = await res.json();
+        setBookingData({
+            booking_id: data.booking_id,
+            user: session.user,
+            amount: data.orderAmount,
+        });
+        setShowPaymentModal(true);
         // console.log(data.payment_session_id);
-        window.location.href = `https://payments-test.cashfree.com/order/#${data.payment_session_id}`;
+        // window.location.href = `https://payments-test.cashfree.com/order/#${data.payment_session_id}`;
 
-        // const bookingId = data.booking_id;
-
-        // // --- Redirect to Cashfree Hosted Checkout ---
-        // const orderId = "ORD-" + bookingId + "-" + Date.now();
-        // const discountedAmount = (totalPrice - totalPrice * 0.15).toFixed(2);
-        // const appId = "CF10796964D3MT42JVGGUC73BSHEPG";
-        // const returnUrl = `${process.env.NEXT_PUBLIC_RETURN_URL}?booking_id=${bookingId}`;
-
-        // const baseUrl =
-        //     process.env.NODE_ENV === "prod"
-        //     ? "https://www.cashfree.com/pgappsdemo"
-        //     : "https://test.cashfree.com/pgappsdemo";
-
-        // const paymentUrl = `${baseUrl}?appId=${appId}&orderId=${orderId}&orderAmount=${discountedAmount}&orderCurrency=INR&orderNote=Hotel%20Booking&customerName=${encodeURIComponent(
-        //     session.user.name
-        // )}&customerEmail=${encodeURIComponent(
-        //     session.user.email
-        // )}&customerPhone=${encodeURIComponent(
-        //     session.user.phone || "9999999999"
-        // )}&returnUrl=${encodeURIComponent(returnUrl)}`;
-
-        // window.location.href = paymentUrl;
         } catch (err) {
         console.error("Error:", err);
         alert("Something went wrong!");
         }
+    };
+    const handlePay = async () => {
+        try {
+        const res = await fetch("/api/create-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+            booking_id: bookingData.booking_id,
+            status: "confirmed",
+            payment_status: "paid",
+            amount: bookingData.amount,
+            payment_provider: "Online",
+            }),
+        });
+        if (!res.ok) throw new Error("Payment update failed");
+        window.location.href = "/bookings";
+        } catch (err) {
+        console.error(err);
+        alert("Payment update failed!");
+        }
+    };
+
+    const handleCancel = () => {
+        setShowPaymentModal(false);
+        // window.location.href = "/bookings";
     };
     return (
         <div className="col-xl-4 col-lg-4 lg-mb-30">
@@ -150,6 +161,48 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
                     </div>
                 </div> */}
             </div>
+            {showPaymentModal && bookingData && (
+                <div className="modal-overlay">
+                <div className="modal-box">
+                    <h3>Payment Details</h3>
+                    <p><strong>Name:</strong> {bookingData.user.name}</p>
+                    <p><strong>Email:</strong> {bookingData.user.email}</p>
+                    <p><strong>Phone:</strong> {bookingData.user.phone}</p>
+                    <p><strong>Amount:</strong> ₹{bookingData.amount}</p>
+                    <div className="modal-actions">
+                    <button className="theme-btn" onClick={handlePay}>Pay</button>
+                    <button className="theme-btn cancel" onClick={handleCancel}>Cancel</button>
+                    </div>
+                </div>
+                <style jsx>{`
+                    .modal-overlay {
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: rgba(0, 0, 0, 0.6);
+                    display: flex; align-items: center; justify-content: center;
+                    z-index: 9999;
+                    }
+                    .modal-box {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 30px;
+                    width: 90%;
+                    max-width: 400px;
+                    text-align: center;
+                    }
+                    .modal-actions {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 20px;
+                    }
+                    .cancel {
+                    background: #ccc;
+                    color: #000;
+                    }
+                `}</style>
+                </div>
+            )}
         </div>
     );
 };
