@@ -16,7 +16,8 @@ export async function GET(req) {
         DATE_FORMAT(b.check_out_date, '%d-%m-%Y') AS check_out_date,
         b.total_price, b.discount
        FROM bookings b
-       WHERE b.user_id = ?
+       WHERE b.user_id = ? AND
+       b.deleted_at IS NULL
        ORDER BY b.created_at DESC`,
       [user_id]
     );

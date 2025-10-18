@@ -20,9 +20,9 @@ export async function POST(request) {
 
     const [result] = await conn.query(
       `INSERT INTO bookings 
-        (user_id, check_in_date, check_out_date, total_price, discount, status, payment_status, expires_at, created_at)
-       VALUES (?, ?, ?, ?, ?, 'pending_payment', 'pending', ?, NOW())`,
-      [user.id, check_in_date, check_out_date, total_price, discount, expiresAt]
+        (user_id, check_in_date, check_out_date, total_price, discount, status, payment_status, expires_at, created_at,created_by)
+       VALUES (?, ?, ?, ?, ?, 'pending_payment', 'pending', ?, NOW(),?)`,
+      [user.id, check_in_date, check_out_date, total_price, discount, expiresAt,user.id]
     );
 
     const bookingId = result.insertId;
@@ -31,8 +31,8 @@ export async function POST(request) {
     // Insert booking items
     for (const it of items) {
       await conn.query(
-        `INSERT INTO booking_items (booking_id, category_id, quantity) VALUES (?, ?, ?)`,
-        [bookingId, it.category_id, it.quantity]
+        `INSERT INTO booking_items (booking_id, category_id, quantity,created_at,created_by) VALUES (?, ?, ?,NOW(),?)`,
+        [bookingId, it.category_id, it.quantity,user.id]
       );
     }
 

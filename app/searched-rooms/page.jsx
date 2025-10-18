@@ -5,6 +5,7 @@ import Footer from "../footer/footer";
 import HeaderOne from "../header/HeaderOne";
 import BreadCrumb from "../breadcrumb/breadcrumb";
 import Roomlist from "./room-list";
+import { PacmanLoader  } from "react-spinners";
 
 const SearchedRoomsPage = () => {
   const searchParams = useSearchParams();
@@ -34,6 +35,20 @@ const SearchedRoomsPage = () => {
     <>
     <HeaderOne />
     <BreadCrumb title="Available Rooms" innerTitle="available-rooms" bgImage="/img/banner/img2.jpg"/>
+    {/* {loading && <Loader />} */}
+    {loading && (
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'rgba(255,255,255,0.7)',
+        zIndex: 9999
+      }}>
+        <PacmanLoader color="#B89146" size={30} />
+      </div>
+    )}
     <Roomlist roomList={rooms} checkIn={checkIn} checkOut={checkOut}/>  
     <Footer/>
     </>

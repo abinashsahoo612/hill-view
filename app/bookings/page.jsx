@@ -5,6 +5,7 @@ import BreadCrumb from "../breadcrumb/breadcrumb";
 import Footer from "../footer/footer";
 import HeaderOne from "../header/HeaderOne";
 import ScrollToTopButton from "../scroll-to-top/scrollToTop";
+import { PacmanLoader } from "react-spinners";
 
 const Bookings = () => {
   const { data: session, status } = useSession();
@@ -31,9 +32,7 @@ const Bookings = () => {
     fetchBookings();
   }, [session]);
 
-  if (status === "loading") {
-    return <p>Loading session...</p>;
-  }
+  
 
   if (!session) {
     return <p className="text-center mt-10">Please log in to view your bookings.</p>;
@@ -43,7 +42,19 @@ const Bookings = () => {
     <>
       <HeaderOne />
       <BreadCrumb title="Bookings" innerTitle="Bookings" bgImage="/img/banner/Entrance12.png"/>
-      
+      {loading && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'rgba(255,255,255,0.7)',
+          zIndex: 9999
+        }}>
+          <PacmanLoader color="#B89146" size={30} />
+        </div>
+      )}
       <div className="container my-10">
         <h3 className="mb-4">Your Bookings</h3>
 

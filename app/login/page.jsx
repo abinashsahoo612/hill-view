@@ -7,6 +7,7 @@ import { signIn } from "next-auth/react";
 import { useSearchParams,useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { PacmanLoader } from "react-spinners";
 
 export default function LoginPage() {
     const { data: session } = useSession();
@@ -45,6 +46,19 @@ export default function LoginPage() {
     <>
         <HeaderOne />
         <BreadCrumb title="Login" innerTitle="Login" bgImage="/img/banner/Entrance12.png"/>
+        {loading && (
+          <div style={{
+              position: 'fixed',
+              inset: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'rgba(255,255,255,0.7)',
+              zIndex: 9999
+          }}>
+              <PacmanLoader color="#B89146" size={30} />
+          </div>
+        )}
         <div className="container py-5">
         <div className="row justify-content-center">
             <div className="col-md-5 col-lg-4">

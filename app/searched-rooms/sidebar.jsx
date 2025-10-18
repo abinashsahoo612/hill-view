@@ -2,12 +2,15 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
+import { PacmanLoader } from "react-spinners";
 
 const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
     const { data: session } = useSession();
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [bookingData, setBookingData] = useState(null);
+    const [loading, setLoading] = useState(false);
     const handleBooking = async () => {
+        setLoading(true);
         if (!session) {
             const fullPath = window.location.pathname + window.location.search;
             window.location.href = `/login?redirect=${encodeURIComponent(fullPath)}`;
@@ -36,6 +39,7 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
             user: session.user,
             amount: data.orderAmount,
         });
+        setLoading(false);
         setShowPaymentModal(true);
         // console.log(data.payment_session_id);
         // window.location.href = `https://payments-test.cashfree.com/order/#${data.payment_session_id}`;
@@ -46,12 +50,14 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
         }
     };
     const handlePay = async () => {
+        setLoading(true);
         try {
         const res = await fetch("/api/create-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
             booking_id: bookingData.booking_id,
+            user: session.user,
             status: "confirmed",
             payment_status: "paid",
             amount: bookingData.amount,
@@ -59,6 +65,7 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
             }),
         });
         if (!res.ok) throw new Error("Payment update failed");
+        setLoading(false);
         window.location.href = "/bookings";
         } catch (err) {
         console.error(err);
@@ -66,11 +73,40 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
         }
     };
 
-    const handleCancel = () => {
+    const handleCancel = async () => {
+        setLoading(true);
+        try {
+        const res = await fetch("/api/cancel-booking", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+            booking_id: bookingData.booking_id,
+            user: session.user,
+            }),
+        });
+        if (!res.ok) throw new Error("Booking cancel failed");
+        setLoading(false);
         setShowPaymentModal(false);
-        // window.location.href = "/bookings";
+        } catch (err) {
+        console.error(err);
+        alert("Payment update failed!");
+        }
     };
     return (
+        <>
+        {loading && (
+        <div style={{
+            position: 'fixed',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(255,255,255,0.7)',
+            zIndex: 9999
+        }}>
+            <PacmanLoader color="#B89146" size={30} />
+        </div>
+        )}
         <div className="col-xl-4 col-lg-4 lg-mb-30">
             <div className="all__sidebar">
                 <div className="all__sidebar-item">
@@ -204,6 +240,7 @@ const Sidebar = ({details,count,totalPrice,disableBook,checkIn, checkOut}) => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 

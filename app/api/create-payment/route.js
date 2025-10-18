@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 
 export async function POST(request) {
-  const { booking_id, status, payment_status, amount, payment_provider = "Manual" } =
+  const { booking_id, user, status, payment_status, amount, payment_provider = "Manual" } =
     await request.json();
 
   if (!booking_id || !amount) {
@@ -16,7 +16,7 @@ export async function POST(request) {
   try {
     await connection.query(
       `UPDATE bookings 
-       SET status = ?, payment_status = ?
+       SET status = ?, payment_status = ?, updated_at = NOW()
        WHERE id = ?`,
       [status || "confirmed", payment_status || "paid", booking_id]
     );
@@ -24,14 +24,15 @@ export async function POST(request) {
     const transaction_id = "TXN-" + randomUUID().slice(0, 10); 
     await connection.query(
       `INSERT INTO payments 
-        (booking_id, payment_provider, transaction_id, amount, currency, created_at) 
-       VALUES (?, ?, ?, ?, ?, NOW())`,
+        (booking_id, payment_provider, transaction_id, amount, currency, created_at,created_by) 
+       VALUES (?, ?, ?, ?, ?, NOW(),?)`,
       [
         booking_id,
         payment_provider,
         transaction_id,
         amount,
         "INR",
+        user.id
       ]
     );
 
