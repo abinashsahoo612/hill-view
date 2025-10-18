@@ -13,25 +13,36 @@ export async function POST(request) {
       );
     }
 
-    const [rows] = await pool.query(
-      `SELECT rc.id AS category_id,
-              rc.name,
-              rc.price_per_night,
-              rc.total_rooms,
-              (rc.total_rooms - IFNULL(SUM(bi.quantity), 0)) AS available_rooms
-       FROM room_categories rc
-       LEFT JOIN booking_items bi ON rc.id = bi.category_id
-       LEFT JOIN bookings b ON bi.booking_id = b.id
-         AND b.status IN ('pending_payment','confirmed')
-         AND (
-             b.check_in_date < ?  -- booking starts before checkout
-             AND b.check_out_date > ?  -- booking ends after checkin
-         )
-       GROUP BY rc.id`,
-      [check_out_date, check_in_date]
-    );
+    const [booked] = await pool.query(`
+      SELECT 
+        bi.category_id,
+        SUM(bi.quantity) AS booked_rooms
+      FROM booking_items bi
+      JOIN bookings b ON b.id = bi.booking_id
+      WHERE LOWER(b.status) = 'confirmed'
+        AND b.check_in_date < ?
+        AND b.check_out_date > ?
+      GROUP BY bi.category_id
+    `, [check_out_date, check_in_date]);
 
-    return NextResponse.json(rows, { status: 200 });
+    const [categories] = await pool.query(`
+      SELECT id AS category_id, name, price_per_night, total_rooms
+      FROM room_categories
+    `);
+
+    const result = categories.map(cat => {
+      const bookedCat = booked.find(b => b.category_id === cat.category_id);
+      const bookedRooms = bookedCat ? bookedCat.booked_rooms : 0;
+      const availableRooms = cat.total_rooms - bookedRooms;
+
+      return {
+        ...cat,
+        available_rooms: availableRooms,
+        booked_rooms: bookedRooms
+      };
+    });
+
+    return NextResponse.json(result, { status: 200 });
   } catch (err) {
     console.error(err);
     return NextResponse.json({ error: err.message }, { status: 500 });
